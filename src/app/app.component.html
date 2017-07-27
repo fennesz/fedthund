@@ -1,0 +1,16 @@
+<nav class="menubuttons">
+  <a [routerLink]=" ['./'] " routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+        Home
+      </a>
+  <a [routerLink]=" ['./about'] " routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+        About
+      </a>
+</nav>
+
+<main class="mainpage">
+  <router-outlet></router-outlet>
+</main>
+
+<footer>
+  <span>Fedthund apps</span>
+</footer>

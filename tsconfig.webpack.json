@@ -29,6 +29,7 @@
   },
   "exclude": [
     "node_modules",
+    "functions/node_modules",
     "dist",
     "src/**/*.spec.ts",
     "src/**/*.e2e.ts"
