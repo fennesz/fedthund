@@ -76,4 +76,4 @@ dll/
 
 firebase.config.ts
 
-src/assets
+src/assets/*
