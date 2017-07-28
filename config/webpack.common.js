@@ -22,6 +22,7 @@ const InlineManifestWebpackPlugin = require('inline-manifest-webpack-plugin');
 const LoaderOptionsPlugin = require('webpack/lib/LoaderOptionsPlugin');
 const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 const ngcWebpack = require('ngc-webpack');
+const path = require('path');
 //const PreloadWebpackPlugin = require('preload-webpack-plugin');
 
 /**
@@ -30,7 +31,7 @@ const ngcWebpack = require('ngc-webpack');
 const HMR = helpers.hasProcessFlag('hot');
 const AOT = process.env.BUILD_AOT || helpers.hasNpmFlag('aot');
 const METADATA = {
-  title: 'Angular2 Webpack Starter by @gdi2290 from @AngularClass',
+  title: 'Fedthund apps',
   baseUrl: '/',
   isDevServer: helpers.isWebpackDevServer(),
   HMR: HMR
@@ -97,7 +98,6 @@ module.exports = function (options) {
     module: {
 
       rules: [
-
         /**
          * Typescript loader support for .ts
          *
@@ -111,6 +111,7 @@ module.exports = function (options) {
          * See: https://github.com/TheLarkInn/angular2-template-loader
          * See: https://github.com/shlomiassaf/ng-router-loader
          */
+
         {
           test: /\.ts$/,
           use: [
@@ -334,6 +335,7 @@ module.exports = function (options) {
         inject: 'body'
       }),
 
+      
       /**
        * Plugin: HtmlElementsPlugin
        * Description: Generate html tags based on javascript maps.
@@ -409,6 +411,7 @@ module.exports = function (options) {
        * https://github.com/szrenwei/inline-manifest-webpack-plugin
        */
       new InlineManifestWebpackPlugin(),
+
     ],
 
     /**

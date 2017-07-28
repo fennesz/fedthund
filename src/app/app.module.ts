@@ -1,3 +1,13 @@
+import { IKeyedCollection } from '../library/IKeyedCollection';
+import { KeyedCollection } from '../library/implementations/KeyedCollection';
+import { FirebaseService } from '../services/firebase.service';
+import { TerminalComponent } from './about/terminal/terminal.component';
+import { MyinfoComponent } from './about/myinfo/myinfo.component';
+import { LearningComponent } from './home/learning/learning.component';
+import { ShowcaseComponent } from './home/showcase/showcase.component';
+import { LandingComponent } from './home/landing/landing.component';
+import { CarouselComponent } from './home/showcase/carousel/carousel.component';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
@@ -25,17 +35,22 @@ import { AppComponent } from './app.component';
 import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { AppState, InternalStateType } from './app.service';
 import { HomeComponent } from './home';
-import { AboutComponent } from './about';
 import { NoContentComponent } from './no-content';
-import { XLargeDirective } from './home/x-large';
 
 import '../styles/styles.scss';
 import '../styles/headings.css';
+import { AboutComponent } from './about/about.component';
+
+import {TerminalModule} from 'primeng/primeng';
+import { firebaseConfig } from '../../config/firebase.config';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
 
 // Application wide providers
 const APP_PROVIDERS = [
   ...APP_RESOLVER_PROVIDERS,
-  AppState
+  AppState,
+  FirebaseService
 ];
 
 type StoreType = {
@@ -54,16 +69,25 @@ type StoreType = {
     AboutComponent,
     HomeComponent,
     NoContentComponent,
-    XLargeDirective
-  ],
+    CarouselComponent,
+    LandingComponent,
+    ShowcaseComponent,
+    LearningComponent,
+    MyinfoComponent,
+    TerminalComponent
+],
   /**
    * Import Angular's modules.
    */
   imports: [
     BrowserModule,
     FormsModule,
+    NgbModule.forRoot(),
     HttpModule,
-    RouterModule.forRoot(ROUTES, { useHash: true, preloadingStrategy: PreloadAllModules })
+    RouterModule.forRoot(ROUTES, { useHash: true, preloadingStrategy: PreloadAllModules }),
+    TerminalModule,
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule
   ],
   /**
    * Expose our Services and Providers into Angular's dependency injection.

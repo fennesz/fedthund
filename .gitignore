@@ -70,3 +70,10 @@ dll/
 *.css.shim.ts
 *.ngsummary.json
 *.shim.ngstyle.ts
+
+#wwwroot
+*/wwwroot
+
+firebase.config.ts
+
+src/assets

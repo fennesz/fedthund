@@ -1,20 +1,64 @@
 html, body{
   height: 100%;
-  font-family: Arial, Helvetica, sans-serif
+  width: 100%;
+  font-family: roboto, 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  margin: 0px;
 }
 
-nav.menubuttons {
-  display:flex;
+home {
+  width: 100%;
+  height: 100%;
+}
+
+nav.menu a {
+  display: flex;
   align-content: center;
-  justify-content: center;
+  justify-content: flex-start;
+  background-color: transparent;
+  border-color: #e7e7e7;
+  margin: 0px;
 }
 
 main.mainpage {
-  display:flex;
+  display: flex;
   justify-content: center;
-  align-content: center;
+  align-content: flex-start;
+}
+
+nav {
+  margin: 0px;
+}
+
+nav a {
+  color: darkgrey;
+  background-color: transparent;
+  border-radius: 1px;
+  margin: 1px;
 }
 
 a.active {
-  background-color: gray;
+  color: dimgrey;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.links {
+  display: flex;
+  list-style-type: none;
+  justify-content: flex-end;
+  align-items: flex-start;
+  margin: 0px;
+  -webkit-padding-start: 0px;
+  padding-left: 160px;
+  padding-right: 160px;
+}
+
+.nav-item-home {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
 }

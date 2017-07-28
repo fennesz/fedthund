@@ -1,16 +1,29 @@
-<nav class="menubuttons">
-  <a [routerLink]=" ['./'] " routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+<nav class="menu">
+  <ul class="links">
+    <li class="nav-item-home">
+      <a [routerLink]=" ['./'] " routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
         Home
       </a>
-  <a [routerLink]=" ['./about'] " routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+    </li>
+    <li class="nav-item">
+      <a [routerLink]=" ['./about'] " routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
         About
       </a>
+    </li>
+    <li class="nav-item">
+      <a href="https://play.google.com/store/apps/developer?id=Fedthund" target="_blank">
+        Apps
+      </a>
+    </li>
+  </ul>
 </nav>
-
 <main class="mainpage">
   <router-outlet></router-outlet>
 </main>
 
 <footer>
-  <span>Fedthund apps</span>
+  <div class="container">
+    <hr>
+    <p class="copyright text-muted small">Copyright &copy; Fedthund 2017. All Rights Reserved</p>
+  </div>
 </footer>
