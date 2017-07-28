@@ -1,0 +1,33 @@
+.container {
+    height: 100%;
+    padding-top: 2%;
+}
+
+.terminalclass {
+    width: 50%;
+    padding-top: 2%;
+    padding-left: 10%;
+}
+
+.container {
+    width: 100%;
+}
+
+.col-lg-5 {
+    padding-left: 15%;
+}
+
+::ng-deep .ui-terminal {
+    background: black;
+}
+
+::ng-deep .ui-terminal-content-prompt {
+    color: green;
+}
+::ng-deep .ui-terminal-content {
+    color: green;
+}
+
+::ng-deep .ui-terminal-input {
+    color: green;
+}

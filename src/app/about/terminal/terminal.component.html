@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-5">
+      <hr class="section-heading-spacer">
+      <div class="clearfix"></div>
+      <div class="textholder">
+        <h2 class="section-heading">Learn more</h2>
+        <p class="lead">Program something with me! Try typing "hello" or "help" in the hacker-console.</p>
+      </div>
+    </div>
+    <div class="terminalclass">
+      <p-terminal (handler)="onCommand($event)" [response]="response" prompt="fedthund $"></p-terminal>
+    </div>
+  </div>
+</div>
+<!-- /.container -->

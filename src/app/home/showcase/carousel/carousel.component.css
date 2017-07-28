@@ -1,0 +1,67 @@
+::ng-deep .carousel-caption {
+    position: absolute;
+    display: flex;
+    background-color: black;
+    opacity: 0.8;
+    top: auto;
+    height: 30%;
+    align-items: stretch;
+    justify-content: center;
+    right: 0%;
+    left: 0%;
+    bottom: 0%;
+    max-width: 100%;
+}
+
+::ng-deep .carousel slide {
+    padding-right: 0px;
+}
+
+.mainDiv {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 20px;
+}
+
+img {
+    display: block;
+    height: 100%;
+    width: 100%;
+    max-height: 480px;
+    max-width: 320px;
+}
+
+a {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    height: 100%;
+    color: white;
+    font-size: 2vw;
+}
+
+a:hover {
+    color: lightblue;
+    text-decoration: none;
+}
+
+ngb-carousel {
+    max-width: 320px;
+}
+
+::ng-deep .carousel-control-prev-icon {
+    background-size: 30px 30px;
+    height: 100%;
+    width: 100%;
+    margin-left: 10px;
+    background-repeat: no-repeat;
+}
+
+::ng-deep .carousel-control-next-icon {
+    background-size: 30px 30px;
+    height: 100%;
+    width: 100%;
+    margin-right: 10px;
+    background-repeat: no-repeat;
+}
