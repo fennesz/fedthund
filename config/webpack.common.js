@@ -34,7 +34,7 @@ const METADATA = {
   title: 'Fedthund apps',
   baseUrl: '/',
   isDevServer: helpers.isWebpackDevServer(),
-  HMR: HMR
+  HMR: false
 };
 
 /**

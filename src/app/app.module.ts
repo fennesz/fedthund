@@ -1,3 +1,4 @@
+import { CommandhandlerService } from '../services/commandhandler.service';
 import { IKeyedCollection } from '../library/IKeyedCollection';
 import { KeyedCollection } from '../library/implementations/KeyedCollection';
 import { FirebaseService } from '../services/firebase.service';
@@ -50,7 +51,8 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 const APP_PROVIDERS = [
   ...APP_RESOLVER_PROVIDERS,
   AppState,
-  FirebaseService
+  FirebaseService,
+  CommandhandlerService
 ];
 
 type StoreType = {
