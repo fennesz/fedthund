@@ -6,6 +6,13 @@
         "source": "**",
         "destination": "/index.html"
       }
+    ],
+    "redirects": [
+      {
+        "source": "https://fedthund-c1d95.*",
+        "destination": "https://fedthund.dk",
+        "type": 301
+      }
     ]
   },
   "database": {

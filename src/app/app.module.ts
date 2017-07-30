@@ -1,3 +1,4 @@
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommandlogComponent } from './about/commandlog/commandlog.component';
 import { ReversePipe } from '../library/reversepipe.pipe';
 import { CommandhandlerService } from '../services/commandhandler.service';
@@ -95,6 +96,7 @@ type StoreType = {
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
     DataScrollerModule,
+    BrowserAnimationsModule
   ],
   /**
    * Expose our Services and Providers into Angular's dependency injection.

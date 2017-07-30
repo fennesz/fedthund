@@ -1,6 +1,7 @@
 {
   "rules": {
     "commands": {
+      ".indexOn": "datetime",
       ".read": true,
       ".write": true
     }

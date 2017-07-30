@@ -1,15 +1,15 @@
 <header class="intro-header">
 <div class="container">
-  <div class="intro-message">
+  <div (mouseover)="toggleButtonAnimationState()"  class="intro-message">
     <h1>Fedthund</h1>
     <h3>Android development</h3>
     <hr class="intro-divider">
     <ul class="list-inline intro-social-buttons">
       <li class="list-inline-item">
-        <a href="#/about" class="btn btn-secondary btn-lg"><span class="navbutton">About</span></a>
+        <a [@aboutButton]="aboutState" href="#/about" class="btn btn-secondary btn-lg"><span class="navbutton">About</span></a>
       </li>
       <li class="list-inline-item">
-        <a href="https://play.google.com/store/apps/developer?id=Fedthund" target="_blank" class="btn btn-secondary btn-lg"><span class="navbutton">Apps</span></a>
+        <a [@appButton]="appState" href="https://play.google.com/store/apps/developer?id=Fedthund" target="_blank" class="btn btn-secondary btn-lg"><span class="navbutton">Apps</span></a>
       </li>
     </ul>
   </div>
