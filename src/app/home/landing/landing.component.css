@@ -1,4 +1,5 @@
 .intro-header {
+    display:flex;
     padding-top: 50px;
     padding-bottom: 50px;
     text-align: center;
@@ -6,12 +7,18 @@
     background-image: linear-gradient(to right, grey 90%,grey 100%), url(~assets/img/bunnyandfox.png);
     background-blend-mode: overlay;
     background-size: cover;
+    background-position-x: 60%;
 }
 
 .intro-message {
     position: relative;
     padding-top: 20%;
     padding-bottom: 20%;
+}
+
+ul {
+    display: flex;
+    justify-content: center;
 }
 
 .intro-message > h1 {

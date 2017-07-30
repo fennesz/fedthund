@@ -1,21 +1,22 @@
 import { CommandhandlerService } from '../../../services/commandhandler.service';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { Command } from "../../../library/models/command";
 
 @Component({
   selector: 'app-terminal',
   templateUrl: './terminal.component.html',
   styleUrls: ['./terminal.component.css'],
-  providers: [CommandhandlerService],
+  providers: [CommandhandlerService]
+
 })
-export class TerminalComponent implements OnInit {
-  response: string;
+export class TerminalComponent {
 
-  constructor(private commandHandler: CommandhandlerService) { }
+    private response: any;
 
-  ngOnInit() {
-  }
+    constructor(private commandHandler: CommandhandlerService) { }
 
     onCommand(event) {
         this.response = this.commandHandler.handleInput(event);
     }
+
 }

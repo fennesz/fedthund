@@ -20,9 +20,14 @@ h2, p {
     text-align: center;
 }
 
+.col-lg-6.pull-lg-6 {
+    display: flex;
+    justify-content: center;
+}
+
 img {
-    max-width: 80%;
-    padding-left: 10%;
+    height: 80%;
+    width: 80%;
 }
 
 .background {

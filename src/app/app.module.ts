@@ -1,3 +1,5 @@
+import { CommandlogComponent } from './about/commandlog/commandlog.component';
+import { ReversePipe } from '../library/reversepipe.pipe';
 import { CommandhandlerService } from '../services/commandhandler.service';
 import { IKeyedCollection } from '../library/IKeyedCollection';
 import { KeyedCollection } from '../library/implementations/KeyedCollection';
@@ -8,7 +10,7 @@ import { LearningComponent } from './home/learning/learning.component';
 import { ShowcaseComponent } from './home/showcase/showcase.component';
 import { LandingComponent } from './home/landing/landing.component';
 import { CarouselComponent } from './home/showcase/carousel/carousel.component';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
@@ -42,7 +44,7 @@ import '../styles/styles.scss';
 import '../styles/headings.css';
 import { AboutComponent } from './about/about.component';
 
-import {TerminalModule} from 'primeng/primeng';
+import {TerminalModule, DataScrollerModule } from 'primeng/primeng';
 import { firebaseConfig } from '../../config/firebase.config';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
@@ -76,7 +78,9 @@ type StoreType = {
     ShowcaseComponent,
     LearningComponent,
     MyinfoComponent,
-    TerminalComponent
+    TerminalComponent,
+    CommandlogComponent,
+    ReversePipe
 ],
   /**
    * Import Angular's modules.
@@ -89,7 +93,8 @@ type StoreType = {
     RouterModule.forRoot(ROUTES, { useHash: true, preloadingStrategy: PreloadAllModules }),
     TerminalModule,
     AngularFireModule.initializeApp(firebaseConfig),
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    DataScrollerModule,
   ],
   /**
    * Expose our Services and Providers into Angular's dependency injection.

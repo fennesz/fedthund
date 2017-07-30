@@ -1,6 +1,9 @@
+import { FirebaseListObservable } from 'angularfire2/database/firebase_list_observable';
+import { Command } from '../library/models/command';
 import { KeyedCollection } from '../library/implementations/keyedcollection';
 import { FirebaseService } from './firebase.service';
 import { Injectable } from '@angular/core';
+import { FirebaseObjectObservable } from "angularfire2/database";
 
 @Injectable()
 export class CommandhandlerService {
@@ -13,10 +16,28 @@ export class CommandhandlerService {
         this.possibleResponses.Add('birds', 'British Birds, or Danske Havefugle in Danish, is my most succesful app yet. It has over 10.000 unique downloads, and is used in classrooms accross europe as an educational tool.');
     }
 
+    public setCommandAmountRetreived(num: number) {
+        this.firebaseService.setCommandAmountRetreived(num);
+    }
+
     public handleInput(event): string
     {
-        this.firebaseService.saveCommand(event.command, new Date());
+        this.firebaseService.saveCommand(event.command);
         return this.fetchResponse(event.command);
+    }
+
+    public getAllCommands(): Command[] {
+        return this.firebaseService.getCommands();
+    }
+
+    public getCommandObservable(): FirebaseListObservable<Command[]> {
+        return this.firebaseService.getCommandsByDateObservable();
+    }
+
+    public getCommandCount(): number {
+        let retNum: number;
+        this.firebaseService.getCommandCount().subscribe(countObj => retNum = countObj.commandcount);
+        return retNum;
     }
 
     private fetchResponse(command: string): string {

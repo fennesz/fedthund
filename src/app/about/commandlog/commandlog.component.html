@@ -1,0 +1,18 @@
+<div class="commandlog">
+  <h2 class="headertext">Earlier commands</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Time</th>
+        <th>Command</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of commandList | async | reverse">
+        <td>{{item.datetime | date:'medium'}}</td>
+        <td>{{item.command}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <p *ngIf="!allLoaded" class="loadbutton" (click)="loadMore()">Load more</p>
+</div>
