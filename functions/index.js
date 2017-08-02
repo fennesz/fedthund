@@ -8,7 +8,7 @@ const nodemailer = require('nodemailer');
 // TODO: Configure the `gmail.email` and `gmail.password` Google Cloud environment variables.
 
 
-gmailEmail = "mcfennesz@gmail.com";
+gmailEmail = "";
 gmailPassword = encodeURIComponent(functions.config().gmail.password);
 mailTransport = nodemailer.createTransport(
 `smtps://${gmailEmail}:${gmailPassword}@smtp.gmail.com`);
