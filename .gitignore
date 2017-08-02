@@ -78,4 +78,4 @@ firebase.config.ts
 
 src/assets/*
 
-index.js
+**/*index.js
