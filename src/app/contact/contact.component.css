@@ -1,0 +1,57 @@
+.contact {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  padding-right: 1em;
+}
+
+.contactText {
+  font-size: 7px;
+  margin-bottom: 0px;
+  font-weight: bold;
+}
+
+.form-control {
+    min-width: inherit;
+}
+
+.error input {
+    background-color: #E3C3C5;
+}
+
+.error textarea {
+    background-color: #E3C3C5;
+}
+
+::-webkit-input-placeholder {
+    color: lightgray;
+}
+::-moz-placeholder {
+    color: lightgray;
+}
+:-moz-placeholder {
+    color: lightgray;
+}
+:-ms-input-placeholder {
+    color: lightgray;
+}
+
+.error ::-webkit-input-placeholder {
+    color: #999;
+}
+.error ::-moz-placeholder {
+    color: #999;
+}
+.error :-moz-placeholder {
+    color: #999;
+}
+.error :-ms-input-placeholder {
+    color: #999;
+}
+
+em {
+    float: right;
+    color: #E05C65;
+    padding-left: 10px;
+}
