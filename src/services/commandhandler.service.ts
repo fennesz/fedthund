@@ -26,10 +26,6 @@ export class CommandhandlerService {
         return this.fetchResponse(event.command);
     }
 
-    public getAllCommands(): Command[] {
-        return this.firebaseService.getCommands();
-    }
-
     public getCommandObservable(): FirebaseListObservable<Command[]> {
         return this.firebaseService.getCommandsByDateObservable();
     }

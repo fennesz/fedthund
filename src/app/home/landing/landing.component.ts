@@ -43,7 +43,7 @@ export class LandingComponent implements OnInit {
   ngOnInit() {
   }
 
-  private toggleButtonAnimationState() {
+  public toggleButtonAnimationState() {
       this.aboutState = "active";
       this.appState = "active"; 
   }

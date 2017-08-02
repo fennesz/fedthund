@@ -77,3 +77,5 @@ dll/
 firebase.config.ts
 
 src/assets/*
+
+functions/index.js

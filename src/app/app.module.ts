@@ -1,6 +1,7 @@
+import { MessagesenderService } from '../services/messagesender.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommandlogComponent } from './about/commandlog/commandlog.component';
-import { ReversePipe } from '../library/reversepipe.pipe';
+import { ReversePipe } from '../library/pipes/reversepipe.pipe';
 import { CommandhandlerService } from '../services/commandhandler.service';
 import { IKeyedCollection } from '../library/IKeyedCollection';
 import { KeyedCollection } from '../library/implementations/KeyedCollection';
@@ -13,7 +14,7 @@ import { LandingComponent } from './home/landing/landing.component';
 import { CarouselComponent } from './home/showcase/carousel/carousel.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import {
   NgModule,
@@ -49,13 +50,15 @@ import {TerminalModule, DataScrollerModule } from 'primeng/primeng';
 import { firebaseConfig } from '../../config/firebase.config';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { ContactComponent } from './contact/contact.component';
 
 // Application wide providers
 const APP_PROVIDERS = [
   ...APP_RESOLVER_PROVIDERS,
   AppState,
   FirebaseService,
-  CommandhandlerService
+  CommandhandlerService,
+  MessagesenderService
 ];
 
 type StoreType = {
@@ -81,7 +84,8 @@ type StoreType = {
     MyinfoComponent,
     TerminalComponent,
     CommandlogComponent,
-    ReversePipe
+    ReversePipe,
+    ContactComponent
 ],
   /**
    * Import Angular's modules.
@@ -89,6 +93,7 @@ type StoreType = {
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     NgbModule.forRoot(),
     HttpModule,
     RouterModule.forRoot(ROUTES, { useHash: true, preloadingStrategy: PreloadAllModules }),

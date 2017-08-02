@@ -1,5 +1,6 @@
+import { MessageDto } from '../library/models/messageDto';
 import { CommandDto } from '../library/models/commandDto';
-import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database';
+import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable} from 'angularfire2/database';
 import * as firebase from 'firebase';
 import { Injectable, OnInit } from '@angular/core';
 import { UUID } from 'angular2-uuid';
@@ -16,35 +17,12 @@ export class FirebaseService implements OnInit {
     public ngOnInit(): void {
     }
 
-    public saveCommand(command: string) {
-        let comDto = new CommandDto(command, firebase.database.ServerValue.TIMESTAMP);
-        this.db.database.ref('commands/' +  UUID.UUID()).set(comDto);
-        this.db.object('commands/metadata').$ref.ref.transaction(countObj => {
-            if (countObj === null)
-                return {commandcount: 1};
-            else
-                return {commandcount: countObj.commandcount + 1};
-        });
-    }
-
     public setCommandAmountRetreived(num: number) {
         this.commandAmountRetrieved = num;
     }
 
     public getCommandCount(): FirebaseObjectObservable<any> {
-        return this.db.object('commands/metadata');
-    }
-
-    public getCommands(): Command[] {
-        let commands: Command[] = new Array<Command>();
-        this.db.list('/commands', {
-            query: {
-                orderByChild: 'datetime'
-            }
-        }).subscribe(out => out.forEach(element => {
-            commands.push(new Command(element.command, new Date(element.datetime)));
-        }));
-        return commands;
+        return this.db.object('commandsMetadata');
     }
 
     public getCommandsByDateObservable(): FirebaseListObservable<Command[]> {
@@ -55,5 +33,28 @@ export class FirebaseService implements OnInit {
                 limitToLast: this.commandAmountRetrieved,
             }
         }) as FirebaseListObservable<Command[]>;
+    }
+
+    public saveCommand(msg: string) {
+        var message = new CommandDto(msg, firebase.database.ServerValue.TIMESTAMP);
+        this.db.database.ref('commands/' +  UUID.UUID()).set(message);
+        this.db.object('commandsMetadata').$ref.ref.transaction(countObj => {
+            if (countObj === null)
+                return {commandcount: 1};
+            else
+                return {commandcount: countObj.commandcount + 1};
+        });
+    }
+
+    public saveMessage(message: MessageDto) {
+        message.datetime = firebase.database.ServerValue.TIMESTAMP;
+        var uuid = UUID.UUID();
+        this.db.database.ref('contactmessages/' + uuid).set(message);
+        this.db.object('contactmessagesMetadata').$ref.ref.transaction(countObj => {
+            if (countObj === null)
+                return {messagecount: 1};
+            else
+                return {messagecount: countObj.messagecount + 1};
+        });
     }
 }

@@ -4,6 +4,19 @@
       ".indexOn": "datetime",
       ".read": true,
       ".write": true
+    },
+    "contactmessages": {
+      ".indexOn": "datetime",
+      ".read": true,
+      ".write": true
+    },
+    "commandsMetadata": {
+      ".read": true,
+      ".write": true
+    },
+    "contactmessagesMetadata": {
+      ".read": true,
+      ".write": true
     }
   }
 }

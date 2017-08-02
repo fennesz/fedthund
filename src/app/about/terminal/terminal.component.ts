@@ -11,7 +11,7 @@ import { Command } from "../../../library/models/command";
 })
 export class TerminalComponent {
 
-    private response: any;
+    public response: any;
 
     constructor(private commandHandler: CommandhandlerService) { }
 

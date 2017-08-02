@@ -91,6 +91,7 @@
     "firebase": "^4.2.0",
     "http-server": "^0.9.0",
     "ie-shim": "^0.1.0",
+    "nodemailer": "^4.0.1",
     "primeng": "^4.1.2",
     "promise-polyfill": "^6.0.2",
     "reflect-metadata": "^0.1.10",

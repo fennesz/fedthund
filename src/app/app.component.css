@@ -45,6 +45,18 @@ a.active {
 a:hover {
   text-decoration: none;
 }
+hr {
+  margin-bottom: 0px;
+}
+
+.copyright.text-muted.small {
+  margin-bottom: 0px;
+  padding-left: 2%;
+}
+
+.contactImg {
+  max-width: 32px
+}
 
 .links {
   display: flex;
@@ -61,4 +73,12 @@ a:hover {
   display: flex;
   justify-content: flex-start;
   width: 100%;
+}
+
+.footerDiv {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
 }
